@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kare ve alan hesabı </title>
+    <style>
+        body{
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: rgb(44, 43, 43);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: 200;
+            font-style: oblique;
+        }
+        input[type="button"] {
+            color: rgb(36, 22, 119);
+            background-color: yellow;
+            font-size: 15px;
+            margin-left: 15px;
+            padding: 10px;
+            text-align: center;
+        }
+        input[type="text"]{
+            background-color: rgb(56, 56, 231);
+            color: yellow;
+        }
+      
+        input[type="text"]:hover {
+            background-color: yellow;
+            color: blue;
+        }
+        input[type="text"]:focus{
+           font-size: 15px;
+        }
+        #kare{
+            border: 2px solid green;
+            padding: 20px;
+            margin: 25px;
+            background-color: cornflowerblue;
+        }
+        #dikdörtgen{
+            border: 2px solid green;
+            padding: 20px;
+            margin: 25px;
+            background-color: cornflowerblue;
+        }
+        #dikucgen{
+            border: 2px solid green;
+            padding: 20px;
+            margin: 25px;
+            background-color: cornflowerblue;
+        }
+        #eskenarucgen{
+            
+                border: 2px solid green;
+                padding: 20px;
+                margin: 25px;
+                background-color: cornflowerblue;
+           
+        }
+
+        #cesitkenarucgen{
+            border: 2px solid green;
+            padding: 20px;
+            margin: 25px;
+            background-color: cornflowerblue;
+        }
+        #daire{
+            border: 2px solid green;
+            padding: 20px;
+            margin: 25px;
+            background-color: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Alan ve Cevre Hesabi uygulamasi</h1>
+<section id="kare">
+<h1> Kare alan ve cevre hesabi </h1>
+<input type="text" id="kenar1" placeholder="Kenarı girin">
+<input type="button" value="Hesaplakare" id="hesaplakare">
+</section>
+
+<section id="dikdörtgen">
+<h1> Dikdörtgen alan ve cevre hesabi </h1>
+<input type="text" id="kenar1dortgen" placeholder="1. Kenarı girin">
+<input type="text" id="kenar2dortgen" placeholder="2. Kenarı girin">
+<input type="button" value="Hesapladiktorgen" id="hesapladikdörtgen">
+</section>
+
+<section id="dikucgen">
+<h1> Dikücgen  alan ve cevre hesabi </h1>
+<input type="text" id="kenar1dık" placeholder="1. Kenarı girin">
+<input type="text" id="kenar2dık" placeholder="2. Kenarı girin">
+<input type="text" id="kenar3dık" placeholder="3. Kenarı girin">
+<hr>
+<input type="text" id="taban" placeholder="Taban değeri girin">
+<input type="text" id="yükseklik" placeholder="Yükseklik değeri girin">
+<input type="button" value="Hesapladikucgen" id="hesapladikucgen">
+</section>
+<section id="eskenarucgen">
+<h1> EskenarUcgen alan ve cevre hesabi </h1>
+<input type="text" id="kenar1eskenar" placeholder="Kenarı girin">
+<input type="text" id="yaricap" placeholder="Yaricapi">
+<input type="button" value="Hesaplaeskenarucgen" id="hesaplaeskenarucgen">
+</section>
+<section id="cesitkenarucgen">
+<h1> Cesitkenar  alan ve cevre hesabi </h1>
+<input type="text" id="kenar1cesit" placeholder="1. Kenarı girin">
+<input type="text" id="kenar2cesit" placeholder="2. Kenarı girin">
+<input type="text" id="kenar3cesit" placeholder="3. Kenarı girin">
+<hr>
+<input type="button" value="Hesaplacesitkenarucgen" id="hesaplacesitkenarucgen">
+</section>
+<section id="daire">
+<h1> Daire alan ve cevre hesabi </h1>
+<input type="text" id="pi" placeholder="Pi değeri girin" value="3.14" >
+<input type="text" id="yaricapdaire" placeholder="Yaricap değeri girin">
+
+<hr>
+<input type="button" value="Hesapladaire" id="hesapladaire">
+</section>
+<script> 
+ 
+function hesapladkare(){
+//text kutusu içindeki değerleri okuyup sayi1,sayi2 değişkenine aktarıyoruz.
+var sayi1=document.getElementById("kenar1").value;
+
+//text kutusuna girilen değerler metinsel türdedir. Hesaplama yapabilmek için sayıya çeviriyoruz.
+sayi1=Number(sayi1);
+
+var alan = sayi1*sayi1;
+var cevre = sayi1*4;
+document.write("Kare alanı:"+alan+" \n Kare çevresi:"+cevre);
+}    
+function hesapladikdortgen(){
+//text kutusu içindeki değerleri okuyup sayi1,sayi2 değişkenine aktarıyoruz.
+var sayi1=document.getElementById("kenar1dortgen").value;
+var sayi2=document.getElementById("kenar2dortgen").value;
+ 
+//text kutusuna girilen değerler metinsel türdedir. Hesaplama yapabilmek için sayıya çeviriyoruz.
+sayi1=Number(sayi1);
+sayi2=Number(sayi2);
+ 
+var alan=sayi1*sayi2;
+var cevre=(sayi1+sayi2)*2;
+document.write("Dikdörtgenin alanı:"+alan+" \n Dikdörtgenin çevresi:"+cevre);
+ 
+ 
+}
+function hesapladıkucgen(){
+    //text kutusu içindeki değerleri okuyup sayi1,sayi2 değişkenine aktarıyoruz.
+var sayi1=document.getElementById("kenar1dık").value;
+var sayi2=document.getElementById("kenar2dık").value;
+var sayi3=document.getElementById("kenar3dık").value;
+
+var taban = document.getElementById("taban").value;
+var yükseklik = document.getElementById("yükseklik").value;
+
+//text kutusuna girilen değerler metinsel türdedir. Hesaplama yapabilmek için sayıya çeviriyoruz.
+sayi1=Number(sayi1);
+sayi2=Number(sayi2);
+sayi3=Number(sayi3);
+taban=Number(taban);
+yukseklik=Number(yükseklik);
+ 
+var alan=(taban*yukseklik)/2;
+var cevre=sayi1+sayi2+sayi3;
+document.write("Dikucgenin alanı:"+alan+" \n Dikucgenin çevresi:"+cevre);
+ 
+} 
+function hesaplaeskenarucgen(){
+    //text kutusu içindeki değerleri okuyup sayi1,sayi2 değişkenine aktarıyoruz.
+var sayi1=document.getElementById("kenar1eskenar").value;
+var sayi2=document.getElementById("yaricap").value;
+ 
+//text kutusuna girilen değerler metinsel türdedir. Hesaplama yapabilmek için sayıya çeviriyoruz.
+sayi1=Number(sayi1);
+sayi2=Number(sayi2);
+
+sayi2=Math.sqrt(3) / 4;
+var alan = sayi2*sayi1*sayi1;
+var cevre=sayi1*3;
+document.write("Eskenarucgenin alanı:"+alan+" \n Eskenarucgenin çevresi:"+cevre);
+ 
+} 
+function hesaplapacesitkenarucgen(){
+     //text kutusu içindeki değerleri okuyup sayi1,sayi2 değişkenine aktarıyoruz.
+var sayi1=document.getElementById("kenar1cesit").value;
+var sayi2=document.getElementById("kenar2cesit").value;
+var sayi3=document.getElementById("kenar3cesit").value;
+
+//text kutusuna girilen değerler metinsel türdedir. Hesaplama yapabilmek için sayıya çeviriyoruz.
+sayi1=Number(sayi1);
+sayi2=Number(sayi2);
+sayi3=Number(sayi3);
+
+ 
+var alan=(sayi1+sayi2+sayi3)/2;
+
+var cevre=sayi1+sayi2+sayi3;
+document.write("Cesitkenarucgenin alanı:"+alan+" \n Cesitkenarucgenin çevresi:"+cevre);
+ 
+}
+function hesapladdaire(){
+        //text kutusu içindeki değerleri okuyup sayi1,sayi2 değişkenine aktarıyoruz.
+var sayi1=document.getElementById("pi").value;
+var sayi2=document.getElementById("yaricapdaire").value;
+
+//text kutusuna girilen değerler metinsel türdedir. Hesaplama yapabilmek için sayıya çeviriyoruz.
+sayi1=Number(sayi1);
+sayi2=Number(sayi2);
+ 
+var alandaire= sayi1 * sayi2 *sayi1;
+var cevredaire=2*sayi1*sayi2;
+document.write("Dairenin alanı:"+alandaire+" \n Dairenin çevresi:"+cevredaire);
+ 
+}
+//hesaplama yapması için hesap butonunu seçiyoruz.
+var hesapBtnkare=document.getElementById("hesaplakare")
+var hesapBtndikdortgen=document.getElementById("hesapladikdörtgen");
+var hesapBtndikucgen = document.getElementById("hesapladikucgen"); 
+var hesapBtneskenarucgen=document.getElementById("hesaplaeskenarucgen")
+var hesapBtncesıtkenarucgen = document.getElementById("hesaplacesitkenarucgen");
+var hesapBtndaire = document.getElementById("hesapladaire");
+//fonksiyonu olaya bağlıyoruz.
+hesapBtnkare.onclick= hesapladkare ;
+hesapBtndikdortgen.onclick=hesapladikdortgen;
+hesapBtndikucgen .onclick = hesapladıkucgen; 
+hesapBtneskenarucgen.onclick= hesaplaeskenarucgen;
+hesapBtncesıtkenarucgen.onclick= hesaplapacesitkenarucgen;
+hesapBtndaire.onclick = hesapladdaire;
+</script>
+    
+</body>
+</html>
